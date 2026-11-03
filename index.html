@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fit&amp;Fun</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+  <script src="https://unpkg.com/ml5@1/dist/ml5.min.js"></script>
+</head>
+<body>
+  <main id="contenidor"></main>
+
+  <!-- MENÚ PRINCIPAL -->
+  <section id="menu" class="pantalla">
+    <svg class="logo" viewBox="0 0 720 220" role="img" aria-label="Logotip Fit&amp;Fun">
+      <defs>
+        <radialGradient id="gb" cx="35%" cy="30%" r="80%"><stop offset="0" stop-color="#ffd1ea"/><stop offset=".6" stop-color="#ff5fb0"/><stop offset="1" stop-color="#d4147a"/></radialGradient>
+        <linearGradient id="gt" x1="0" x2="1"><stop offset="0" stop-color="#ff2d95"/><stop offset="1" stop-color="#8f5bff"/></linearGradient>
+      </defs>
+      <circle cx="110" cy="110" r="95" fill="url(#gb)" stroke="#fff" stroke-width="5"/>
+      <ellipse cx="68" cy="62" rx="26" ry="15" fill="#fff" opacity=".55" transform="rotate(-35 68 62)"/>
+      <g stroke="#fff" stroke-width="9" stroke-linecap="round" fill="none"><circle cx="110" cy="78" r="13" fill="#fff"/><path d="M110 94v50M110 108l-34-24M110 108l34-24M110 144l-20 30M110 144l20 30"/></g>
+      <text x="225" y="142" font-size="104" font-weight="900" textLength="470" lengthAdjust="spacingAndGlyphs" fill="url(#gt)" font-family="system-ui, Arial Rounded MT Bold, Arial, sans-serif">Fit&amp;Fun</text>
+    </svg>
+    <p class="lema">Mou-te, rient i divertint-te!</p>
+    <button id="btnJugar" class="boto">1. Començar un exercici</button>
+    <button id="btnInstruccions" class="boto secundari">2. Instruccions</button>
+  </section>
+
+  <!-- INSTRUCCIONS -->
+  <section id="instruccions" class="pantalla amagat">
+    <h2>Com es juga?</h2>
+    <div class="targetes">
+      <article>
+        <svg viewBox="0 0 120 120"><circle cx="60" cy="32" r="15" fill="#ff5fb0"/><rect x="28" y="52" width="64" height="60" rx="26" fill="#ff5fb0"/><path d="M12 8h96v108H12z" fill="none" stroke="#fff" stroke-width="3" stroke-dasharray="8 6"/></svg>
+        <p><b>1. Col·loca’t.</b> Seu davant l’ordinador, a uns 2 metres. Que se’t vegin el cap, el tors i els braços.</p>
+      </article>
+      <article>
+        <svg viewBox="0 0 120 120"><circle cx="30" cy="85" r="12" fill="#5ad7ff" opacity=".7" stroke="#fff" stroke-width="3"/><circle cx="62" cy="60" r="22" fill="#5ad7ff" opacity=".7" stroke="#fff" stroke-width="3"/><circle cx="92" cy="30" r="30" fill="#5ad7ff" opacity=".7" stroke="#fff" stroke-width="3"/></svg>
+        <p><b>2. Apareixen bombolles.</b> Van creixent fins a un màxim. Mai n’hi haurà més de 3 alhora.</p>
+      </article>
+      <article>
+        <svg viewBox="0 0 120 120"><circle cx="75" cy="50" r="36" fill="#be8cff" opacity=".7" stroke="#fff" stroke-width="3"/><path d="M10 112 Q35 80 60 62" stroke="#ff5fb0" stroke-width="12" stroke-linecap="round" fill="none"/><circle cx="62" cy="61" r="11" fill="#ff2d95" stroke="#fff" stroke-width="3"/></svg>
+        <p><b>3. Atrapa-les!</b> Mou els braços i toca-les amb les mans. Cada bombolla és 1 punt.</p>
+      </article>
+      <article>
+        <svg viewBox="0 0 120 120"><circle cx="60" cy="62" r="46" fill="none" stroke="#ffdc5a" stroke-width="8"/><path d="M60 62V32M60 62l22 12" stroke="#ffdc5a" stroke-width="8" stroke-linecap="round"/></svg>
+        <p><b>4. Tens 30 segons.</b> Pots fer-ho assegut a la cadira. Sense pressa i amb alegria!</p>
+      </article>
+    </div>
+    <button id="btnTornarInst" class="boto">TORNAR</button>
+  </section>
+
+  <!-- COL·LOCACIÓ -->
+  <button id="btnTornarCol" class="boto petit amagat">TORNAR</button>
+  <button id="btnComencar" class="boto gran amagat">COMENÇAR!</button>
+
+  <!-- FINAL -->
+  <section id="final" class="pantalla amagat">
+    <h2>Temps!</h2>
+    <p class="etiqueta">La teva puntuació final</p>
+    <div id="puntsFinals" class="punts">0</div>
+    <button id="btnFinalitzar" class="boto">FINALITZAR</button>
+  </section>
+
+  <script src="sketch.js"></script>
+</body>
+</html>
